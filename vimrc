@@ -34,6 +34,14 @@ endif
 Bundle 'gmarik/vundle'
 Bundle 'tomasr/molokai'
 Bundle 'stephpy/vim-yaml'
+Bundle 'jrosiek/vim-mark'
+
+" -----------------------------------------------------------------------------
+"  < vim-mark >
+" -----------------------------------------------------------------------------
+let mapleader = ","
+nmap <Leader>k <Plug>MarkToggle
+nmap <Leader>K <Plug>MarkAllClear
 
 " -----------------------------------------------------------------------------
 "  < 其他配置 >
@@ -74,7 +82,5 @@ if has("autocmd")
 	" 重新打开文件时回到上次位置 
 	au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 endif
-
-
 
 
