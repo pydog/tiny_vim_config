@@ -1,3 +1,15 @@
+" -----------------------------------------------------------------------------
+"  < 判断操作系统是否是 Windows 还是 Linux >
+" -----------------------------------------------------------------------------
+let g:iswindows = 0
+let g:islinux = 0
+if(has("win32") || has("win64") || has("win95") || has("win16"))
+    let g:iswindows = 1
+    source $VIM/_gvimrc                             " 加载gvim特殊的配置
+else
+    let g:islinux = 1
+endif
+
 set nocompatible                                      "禁用 Vi 兼容模式
 " -----------------------------------------------------------------------------
 "  "  < Vundle 插件管理工具配置 >
@@ -10,8 +22,15 @@ filetype off
 " -----------------------------------------------------------------------------
 "  < Vundle >
 " -----------------------------------------------------------------------------
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+if g:islinux
+    set rtp+=~/.vim/bundle/vundle/
+    call vundle#rc()
+else
+    set rtp+=$VIM/vimfiles/bundle/vundle/
+    call vundle#rc('$VIM/vimfiles/bundle/')
+endif
+
+
 Bundle 'gmarik/vundle'
 Bundle 'tomasr/molokai'
 Bundle 'stephpy/vim-yaml'
