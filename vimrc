@@ -32,7 +32,7 @@ endif
 
 
 Bundle 'gmarik/vundle'
-Bundle 'tomasr/molokai'
+Bundle 'altercation/vim-colors-solarized'
 Bundle 'stephpy/vim-yaml'
 Bundle 'jrosiek/vim-mark'
 
@@ -54,7 +54,10 @@ if has("syntax")
 	syntax on                          " enables syntax highlighting by default
 endif
 set t_Co=256                           " 在终端启用256色
-colorscheme molokai                    " 设置配色方案
+syntax enable
+set background=dark
+colorscheme solarized
+
 set guifont=Courier_new:h12:b:cDEFAULT " 设置字体
 
 
