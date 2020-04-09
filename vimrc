@@ -34,14 +34,14 @@ endif
 Bundle 'gmarik/vundle'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'stephpy/vim-yaml'
-Bundle 'jrosiek/vim-mark'
+Bundle 'lfv89/vim-interestingwords'
 
 " -----------------------------------------------------------------------------
-"  < vim-mark >
+"  < 'lfv89/vim-interestingwords'>
 " -----------------------------------------------------------------------------
-let mapleader = ","
-nmap <Leader>k <Plug>MarkToggle
-nmap <Leader>K <Plug>MarkAllClear
+let g:interestingWordsGUIColors = ['#8CCBEA', '#A4E57E', '#FFDB72', '#FF7272', '#FFB3FF', '#9999FF']
+let g:interestingWordsTermColors = ['154', '121', '211', '137', '214', '222']
+" let g:interestingWordsRandomiseColors = 1
 
 " -----------------------------------------------------------------------------
 "  < 其他配置 >
