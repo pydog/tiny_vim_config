@@ -87,4 +87,12 @@ if has("autocmd")
 	au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 endif
 
+if has("autocmd")
+    "replace all tab to space
+    autocmd BufWrite,BufRead *.yaml,*.c,*.cpp,*.java,*.h,*.sh,.vimrc if ! &bin | silent! :%retab! | endif
+    "auto remove the space at the end of line
+    autocmd BufWrite,BufRead *.yaml,*.c,*.cpp,*.java,*.h,*.sh,.vimrc if ! &bin | silent! :%s/\s\+$// | endif
+    "auto remove space of the beginning
+    autocmd BufWrite,BufRead *.yaml,*.c,*.cpp,*.java,*.h,*.sh,.vimrc if ! &bin | silent! %s/\r//g | endif
+endif
 
